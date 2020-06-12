@@ -1,0 +1,31 @@
+{
+  "name": "one-shot",
+  "version": "1.0.0",
+  "description": "Repo for totally not DnD game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server.js --ignore client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThermalBlade/one-shot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThermalBlade/one-shot/issues"
+  },
+  "homepage": "https://github.com/ThermalBlade/one-shot#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "nodemon": "^2.0.4"
+  }
+}
