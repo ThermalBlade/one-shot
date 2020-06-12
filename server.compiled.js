@@ -4,7 +4,7 @@ var path = require('path');
 
 var express = require('express');
 
-var PORT = process.env.HTTP_PORT || 4001;
+var PORT = process.env.HTTP_PORT || 8080;
 var app = express();
 app.use(express["static"](path.join(__dirname, 'client', 'build')));
 app.get('/', function (req, res) {
