@@ -1,7 +1,10 @@
+const path = require('path')
 const express = require('express')
 
 const PORT = process.env.HTTP_PORT || 4001
 const app = express()
+
+app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 app.get('/', (req, res) => {
     res.send('lets fuckin send it brah')
