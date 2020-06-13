@@ -12,8 +12,8 @@ app.get('/', function (req, res) {
 });
 app.get('/flower', function (req, res) {
   res.json({
-    name: 'Dandelion',
-    color: 'kinda blue'
+    name: 'This is the landing page for One Shot',
+    color: 'Working title, I have no fucking idea what to call this still.'
   });
 });
 app.listen(PORT, function () {
