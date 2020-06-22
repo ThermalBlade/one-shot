@@ -8,8 +8,6 @@ const images = [
     {id:"Map 3 - Dungeon",src:"/img/map3.png"}
 ];
 
-
-const imagearray = ["/img/map1.png","/img/map2.png","/img/map3.png"];
 function Map() {
     const [map, setMap] = useState(0)
 
