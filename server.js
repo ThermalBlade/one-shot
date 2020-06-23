@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 
 app.get('/flower', (req, res) => {
     res.json({
-        name: 'This is the landing page for One Shot',
+        name: 'This is still the landing page im just testing things.',
         color: 'Working title, I have no fucking idea what to call this still.'
     })
 })
