@@ -18,5 +18,39 @@ app.get('/flower', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log('Server is listening at port ${PORT}.')
+    console.log(`Server is listening at port ${PORT}.`)
+})
+
+
+const http = require('http')
+const socketIo = require('socket.io')
+
+const ioPort = 4001
+
+const ioApp = express()
+const index = require('./routes/index')
+ioApp.use(index)
+const server = http.createServer(ioApp)
+const io = socketIo(server)
+
+let interval;
+io.on('connection', (socket) => {
+    console.log('New client connected')
+    if(interval){
+        clearInterval(interval)
+    }
+    interval = setInterval(() => getApiAndEmit(socket), 1000)
+    socket.on('disconnect', () => {
+        console.log('Client disconnected')
+        clearInterval(interval);
+    })
+})
+
+const getApiAndEmit = socket => {
+    const responce = new Date()
+    socket.emit("FromAPI", responce)
+}
+
+server.listen(ioPort, () => {
+    console.log(`IO Server is listening at port ${ioPort}.`)
 })
