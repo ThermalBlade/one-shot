@@ -3,12 +3,15 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import socketIOClient from 'socket.io-client'
 import RandButton from './Button'
+import MultiButton from './MultiButton'
+import { Button, ButtonGroup } from '@material-ui/core';
 const ENDPOINT = 'http://localhost:4001'
 
 
 function App() {
     const [flower, setFlower] = useState({})
     const [responce, setResponce] = useState('')
+    const [showRolls, setShowRolls] = useState(false)
 
     function getFlower(){
         fetch('/flower')
@@ -31,10 +34,9 @@ function App() {
         <div className="App">
             <h1>{flower.name}</h1>
             <p>{flower.color}</p>
-            <h1><RandButton Number={4} Bonus={1} /></h1>
-            <h1><RandButton Number={6} Bonus={0} /></h1>
-            <h1><RandButton Number={10} Bonus={0} /></h1>
-            <h1><RandButton Number={20} Bonus={0} /></h1>
+            <h1><RandButton Number={20} Bonus={1} Words={'Strength'} /></h1>
+            <MultiButton />
+            
             <p>It's <time dateTime = {responce}>{responce}</time></p>
         </div>
     );
