@@ -4,6 +4,8 @@ import './App.css';
 import socketIOClient from 'socket.io-client'
 import RandButton from './Button'
 import MultiButton from './MultiButton'
+import Popup from './Popup'
+import Memes from './KillerQueen.jpg';
 import { Button, ButtonGroup } from '@material-ui/core';
 const ENDPOINT = 'http://localhost:4001'
 
@@ -34,9 +36,9 @@ function App() {
         <div className="App">
             <h1>{flower.name}</h1>
             <p>{flower.color}</p>
-            <h1><RandButton Number={20} Bonus={1} Words={'Strength'} /></h1>
+            <h1><Popup Title={'Thomas'} Content={[<div className="Popup"> <h1>Is a Tall boi</h1> <h1>Should stop stabbing people</h1> <h1>RIP Pig</h1> <img src={Memes} alt="Memes" /> </div>]} /> </h1>
+            <RandButton Number={20} Bonus={1} Words={'Strength'} />
             <MultiButton />
-            
             <p>It's <time dateTime = {responce}>{responce}</time></p>
         </div>
     );
