@@ -1,44 +1,49 @@
 import React, { useState } from 'react';
 import './App.css';
-import Memes from './KillerQueen.jpg';
-import { Button, Popover } from '@material-ui/core';
+import { Popover, Typography } from '@material-ui/core';
 
 
-function Popup(props) {
+function Hoverpopup(props) {
     const [anchorEl, setAnchorEl] = useState(null);
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
     }
 
-    function handleClose(){
+    function handleClose() {
         setAnchorEl(null);
     }
 
     const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
 
     return (
         <div>
-            <Button aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>
-                {props.Title}
-            </Button>
+            <Typography
+                aria-owns={open ? 'mouse-over-popover' : undefined}
+                aria-haspopup="true"
+                onMouseEnter={handleClick}
+                onMouseLeave={handleClose}
+            >
+                {props.Holder}
+            </Typography>
             <Popover
-                id={id}
+                id="mouse-over-popover"
+                className='Hoverover'
                 open={open}
                 anchorEl={anchorEl}
-                onClose={handleClose}
                 anchorOrigin={{
                     vertical: 'bottom',
-                    horizontal: 'right',
+                    horizontal: 'center',
                 }}
                 transformOrigin={{
                     vertical: 'top',
                     horizontal: 'left',
                 }}
+                onClose={handleClose}
+                disableRestoreFocus
             >
                 {props.Content}
             </Popover>
         </div>
     );
 }
-export default Popup;
+export default Hoverpopup;
