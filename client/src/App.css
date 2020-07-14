@@ -40,3 +40,15 @@
 .Map{
   border: 1px solid black;
 }
+
+.Popup {
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+}
+
+.Hoverover {
+    pointer-events: none;
+    width: 75%;
+}
