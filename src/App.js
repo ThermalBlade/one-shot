@@ -6,6 +6,7 @@ import MultiButton from './MultiButton'
 import Popup from './Popup'
 import Memes from './KillerQueen.jpg';
 import Hover from './Hoverpopup'
+import Chat from './Chat'
 import { Button, ButtonGroup } from '@material-ui/core';
 
 
@@ -21,6 +22,8 @@ function App() {
             <MultiButton />
             <p>It's <time dateTime={responce}>{responce}</time></p>
             <Hover Holder={'Townhall'} Content={[<div className="Popup"> <h1>This is the hall for the town</h1> </div>]} />
+
+            <Chat />
         </div>
     );
 }
