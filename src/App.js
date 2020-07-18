@@ -9,20 +9,12 @@ import Hover from './Hoverpopup'
 import { Button, ButtonGroup } from '@material-ui/core';
 
 
-import Chat from './Chat'
+import Chat from './Chat/Chat'
+const maxMessages = React.createContext(10)
 let list = [
-    { name: 'item1' },
-    { name: 'item2' },
-    { name: 'item3' },
-    { name: 'item4' },
-    { name: 'item5' },
-    { name: 'item6' },
-    { name: 'item7' },
-    { name: 'item8' },
-    { name: 'item9' },
-    { name: 'item10'},
-    { name: 'item11'}
+    {name: 'cole'}
   ];
+  let selected = '0'
 
 
 
@@ -39,7 +31,7 @@ function App() {
             <p>It's <time dateTime={responce}>{responce}</time></p>
             <Hover Holder={'Townhall'} Content={[<div className="Popup"> <h1>This is the hall for the town</h1> </div>]} />
 
-            <Chat list={list}/>
+            <Chat list={list} selected={selected}/>
         </div>
     );
 }

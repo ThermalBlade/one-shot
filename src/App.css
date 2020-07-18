@@ -55,18 +55,19 @@
 
 
 
+.scrolling-items:focus{
+  outline: 0
+}
 .menu-item {
-  padding: 0 40px;
+  padding: 0 20px;
   margin: 5px 10px;
   user-select: none;
   cursor: pointer;
   border: none;
+  outline-style: none;
 }
-.menu-item-wrapper.active {
-  border: 1px blue solid;
-}
-.menu-item.active {
-  border: 1px green solid;
+.menu-item:focus{
+  outline: 0
 }
  
 .scroll-menu-arrow {
