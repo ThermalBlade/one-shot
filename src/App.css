@@ -52,3 +52,9 @@
     pointer-events: none;
     width: 75%;
 }
+
+.Hover {
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+}
