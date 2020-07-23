@@ -58,3 +58,24 @@
     height: inherit;
     display: inline-block;
 }
+
+
+.scrolling-items:focus{
+  outline: 0
+}
+.menu-item {
+  padding: 0 20px;
+  margin: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  outline-style: none;
+}
+.menu-item:focus{
+  outline: 0
+}
+ 
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
+}
