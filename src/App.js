@@ -1,22 +1,14 @@
-import React, {useState, useEffect} from 'react';
-//import logo from './logo.svg';
+import React, {useState, useEffect} from 'react'
+import {Switch, Route, Link} from 'react-router-dom'
+//import logo from './logo.svg'
 import './App.css';
 import RandButton from './Button'
 import MultiButton from './MultiButton'
 import Popup from './Popup'
-import Memes from './KillerQueen.jpg';
+import Memes from './KillerQueen.jpg'
 import Hover from './Hoverpopup'
-import { Button, ButtonGroup } from '@material-ui/core';
-
-
 import Chat from './Chat/Chat'
-const maxMessages = React.createContext(10)
-let list = [
-    {name: 'cole'}
-  ];
-  let selected = '0'
-
-
+import { Button, ButtonGroup } from '@material-ui/core';
 
 function App() {
     const [responce, setResponce] = useState('')
@@ -31,7 +23,19 @@ function App() {
             <p>It's <time dateTime={responce}>{responce}</time></p>
             <Hover Holder={'Townhall'} Content={[<div className="Popup"> <h1>This is the hall for the town</h1> </div>]} />
 
-            <Chat list={list} selected={selected}/>
+            <Chat list={['aaa', 'bbb']} />
+            <nav>
+                <Link to='/'>Home</Link>
+                <Link to='/about'>About</Link>
+            </nav>
+            <Switch>
+                <Route exact path='/'>
+                    <Chat list={['aaa']} />
+                </Route>
+                <Route exact path='/about'>
+                    <RandButton Number={20} Bonus={1} Words={'Strength'} />
+                </Route>
+            </Switch>
         </div>
     );
 }
