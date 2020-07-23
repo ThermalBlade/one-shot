@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './App.css';
 import RandButton from './Button'
 import MultiButton from './MultiButton'
@@ -6,7 +6,7 @@ import Popup from './Popup'
 import Memes from './KillerQueen.jpg'
 import Hover from './Hoverpopup'
 
-function App() {
+function DavidTest() {
     const [responce, setResponce] = useState('')
     const [showRolls, setShowRolls] = useState(false)
 
@@ -22,4 +22,4 @@ function App() {
     );
 }
 
-export default App;
+export default DavidTest;
