@@ -10,7 +10,8 @@ const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' })
 const ArrowRight = Arrow({ text: '>', className: 'arrow-next' })
 const maxMessages = 4
 
-const ENDPOINT = 'http://localhost:4000'
+const ENDPOINT = 'http://localhost:'.concat(Math.floor(Math.random() * Math.floor(8000)))
+console.log('endpoint',ENDPOINT)
 const socket = socketIOClient(ENDPOINT);
 
 function Chat(props){
