@@ -56,7 +56,7 @@
 .Hover {
     width: inherit;
     height: inherit;
-    display: inline-block;
+    display: inherit;
 }
 
 
@@ -83,7 +83,7 @@
 .drawArea {
     position: absolute;
     width: 30%;
-    height: 50%;
+    height: 55%;
     margin-left: 35%;
     margin-top: 0px;
     border: 1px solid black;
@@ -103,4 +103,9 @@
 .drawing {
     width: 100%;
     height: 100%;
+}
+
+.buttons {
+    text-align: center;
+    display: inline-block;
 }
