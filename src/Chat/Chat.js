@@ -10,9 +10,9 @@ const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' })
 const ArrowRight = Arrow({ text: '>', className: 'arrow-next' })
 const maxMessages = 4
 
-const ENDPOINT = 'http://localhost:'.concat(Math.floor(Math.random() * Math.floor(8000)))
+const ENDPOINT = 'localhost:3005/games'
 console.log('endpoint',ENDPOINT)
-const socket = socketIOClient(ENDPOINT);
+let socket = socketIOClient(ENDPOINT)
 
 function Chat(props){
 	const [newMessage, changeNewMessage] = useState('')
@@ -35,6 +35,9 @@ function Chat(props){
 	}, [newMessage])
 
 	useEffect(() => {
+		if(socket.disconnected){
+			socket = socketIOClient(ENDPOINT)
+		}
         socket.on('new message2', data => {
 			console.log(data)
 			changeNewMessage(data)
