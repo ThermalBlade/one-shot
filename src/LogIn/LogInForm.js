@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react'
 import '../App.css'
 import socketIOClient from 'socket.io-client'
 
-const ENDPOINT = 'localhost:8080'
+const ENDPOINT = process.env.REACT_APP_SERVER_PATH
 let socket = socketIOClient(ENDPOINT)
-//let games = socketIOClient(ENDPOINT.concat('/games'))
-let chat = socketIOClient('localhost:8080/chat')
+//let games = socketIOClient(ENDPOINT.concat('games'))
+let chat = socketIOClient(ENDPOINT.concat('chat'))
 
 const myusername = 'testingusername'
 

@@ -6,17 +6,14 @@ import socketIOClient from 'socket.io-client'
 import Menu from './Menu'
 import Arrow from './Arrow'
 
-require('dotenv').config();
-
 const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' })
 const ArrowRight = Arrow({ text: '>', className: 'arrow-next' })
 const maxMessages = 4
 
-const ENDPOINT = process.env.SERVER_PATH
-console.log('a', process.env)
-let socket = socketIOClient('localhost:8080')
-//let games = socketIOClient(ENDPOINT.concat('/games'))
-let chat = socketIOClient('localhost:8080/chat')
+const ENDPOINT = process.env.REACT_APP_SERVER_PATH
+let socket = socketIOClient(ENDPOINT)
+//let games = socketIOClient(ENDPOINT.concat('games'))
+let chat = socketIOClient(ENDPOINT.concat('chat'))
 
 const myusername = 'testingusername'
 
