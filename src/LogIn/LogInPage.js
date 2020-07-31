@@ -3,10 +3,9 @@ import '../App.css';
 import LogInForm from './LogInForm'
 
 function LogInPage() {
-
     return (
         <div className="LogInPage">
-            <LogInForm list={[]}/>
+            <LogInForm />
         </div>
     );
 }

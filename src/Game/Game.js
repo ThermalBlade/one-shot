@@ -5,7 +5,7 @@ import socketIOClient from 'socket.io-client'
 const ENDPOINT = process.env.REACT_APP_SERVER_PATH
 let logIn = socketIOClient(ENDPOINT.concat('logIn'))
 
-function LogInForm(){
+function Game(){
 	const [userName, changeUserName] = useState('')
 	const [roomCode, changeRoomCode] = useState('')
 	const [password, changePassword] = useState('')
@@ -85,4 +85,4 @@ function LogInForm(){
 	}
 }
 
-export default LogInForm
+export default Game

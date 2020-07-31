@@ -4,9 +4,10 @@ import './App.css';
 import App from './App'
 import David from './DavidTest'
 import Cole from './ColeTest'
-import LogInPage from './LogIn/LogInPage'
 
-require('dotenv').config();
+import LogInPage from './LogIn/LogInPage'
+import Game from './Game/Game'
+
 
 function Dev() {
     return (
@@ -16,6 +17,7 @@ function Dev() {
                 <Link to='/Cole'>Cole </Link>
                 <Link to='/App'>App </Link>
                 <Link to='/LogIn'>Log In</Link>
+                <Link to='/Game'>Game</Link>
             </nav>
             <Switch>
                 <Route exact path='/David'>
@@ -29,6 +31,9 @@ function Dev() {
                 </Route>
                 <Route exact path='/LogIn'>
                     <LogInPage />
+                </Route>
+                <Route exact path='/Game'>
+                    <Game />
                 </Route>
             </Switch>
         </div>
