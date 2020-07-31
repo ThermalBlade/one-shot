@@ -1,26 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import '../App.css'
-import ScrollMenu from 'react-horizontal-scrolling-menu'
 import socketIOClient from 'socket.io-client'
 
-import Menu from './Menu'
-import Arrow from './Arrow'
-
-require('dotenv').config();
-
-const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' })
-const ArrowRight = Arrow({ text: '>', className: 'arrow-next' })
-const maxMessages = 4
-
-const ENDPOINT = process.env.SERVER_PATH
-console.log('a', process.env)
-let socket = socketIOClient('localhost:8080')
+const ENDPOINT = 'localhost:8080'
+let socket = socketIOClient(ENDPOINT)
 //let games = socketIOClient(ENDPOINT.concat('/games'))
 let chat = socketIOClient('localhost:8080/chat')
 
 const myusername = 'testingusername'
 
-function Chat(props){
+function LogInForm(props){
 	const [sendingMessage, changeSendingMessage] = useState('')
 	const [newMessage, changeNewMessage] = useState('')
 	const [messages, addMessage] = useState(props.list)
@@ -63,21 +52,19 @@ function Chat(props){
 	}
 
 	return(
-		<div className="HoriMenu">
-			<ScrollMenu
-				itemClass={'scrolling-items'}
-				data={Menu(messages, '0', maxMessages)}
-				arrowLeft={ArrowLeft}
-				arrowRight={ArrowRight}
-				selected={'0'}
-				scrollToSelected={true}
-				clickWhenDrag={true}
-				useButtonRole={true}
-				alignCenter={false}
-			/>
+		<div className="LogInForm">
 			<form onSubmit={handleSubmit}>
 				<label>
-					Message:
+					Room Code:
+					<input 
+						type='text' 
+						value={sendingMessage}
+						onChange={e=>changeSendingMessage(e.target.value)}
+					/>
+				</label>
+                <br></br>
+                <label>
+					Room Password:
 					<input 
 						type='text' 
 						value={sendingMessage}
@@ -90,4 +77,4 @@ function Chat(props){
 	)
 }
 
-export default Chat
+export default LogInForm

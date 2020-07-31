@@ -1,11 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import './App.css';
 import Chat from './Chat/Chat'
 
 function ColeTest() {
-    const [responce, setResponce] = useState('')
-    const [showRolls, setShowRolls] = useState(false)
-
     return (
         <div className="App">
             <Chat list={[]}/>
