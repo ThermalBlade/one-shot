@@ -3,13 +3,15 @@ import '../App.css'
 import socketIOClient from 'socket.io-client'
 
 const ENDPOINT = process.env.REACT_APP_SERVER_PATH
-let logIn = socketIOClient(ENDPOINT.concat('logIn'))
+
 
 function Game(){
 	const [userName, changeUserName] = useState('')
 	const [roomCode, changeRoomCode] = useState('')
 	const [password, changePassword] = useState('')
 	const [loggedIn, toggleLoggedIn] = useState(false)
+
+	let logIn = socketIOClient(ENDPOINT.concat('logIn'))
 
 	const handleSubmit = (evt) => {
 		evt.preventDefault()
@@ -22,6 +24,7 @@ function Game(){
 	}
 
 	useEffect(() => {
+		
 		logIn.on('success', (msg) => {
 			toggleLoggedIn(true)
 			console.log('RECIEVED', msg)
