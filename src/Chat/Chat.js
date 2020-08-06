@@ -10,14 +10,16 @@ const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' })
 const ArrowRight = Arrow({ text: '>', className: 'arrow-next' })
 const maxMessages = 4
 
-const ENDPOINT = process.env.REACT_APP_SERVER_PATH
-let socket = socketIOClient(ENDPOINT)
-//let games = socketIOClient(ENDPOINT.concat('games'))
-let chat = socketIOClient(ENDPOINT.concat('chat'))
+
 
 const myusername = 'testingusername'
 
 function Chat(props){
+
+	const ENDPOINT = process.env.REACT_APP_SERVER_PATH
+let socket = socketIOClient(ENDPOINT)
+//let games = socketIOClient(ENDPOINT.concat('games'))
+let chat = socketIOClient(ENDPOINT.concat('chat'))
 	const [sendingMessage, changeSendingMessage] = useState('')
 	const [newMessage, changeNewMessage] = useState('')
 	const [messages, addMessage] = useState(props.list)

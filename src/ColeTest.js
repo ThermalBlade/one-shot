@@ -4,9 +4,10 @@ import Chat from './Chat/Chat'
 
 function ColeTest() {
     return (
-        <div className="App">
-            <Chat list={[]}/>
-        </div>
+        // <div className="App">
+        //     <Chat list={[]}/>
+        // </div>
+        <div></div>
     );
 }
 
