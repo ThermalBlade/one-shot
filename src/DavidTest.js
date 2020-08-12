@@ -7,7 +7,8 @@ import Memes from './KillerQueen.jpg'
 import Hover from './Hoverpopup'
 import Map from './Map'
 import DevDraw from './DrawArea'
-import { Button, ButtonGroup, Box } from '@material-ui/core';
+import Draggable from 'react-draggable';
+import { Button, ButtonGroup, Box, Paper } from '@material-ui/core';
 
 
 function App() {
@@ -23,6 +24,13 @@ function App() {
             <p>It's <time dateTime={responce}>{responce}</time></p>
             <p className='buttons'><Hover Holder={'Townhall'} Content={[<div className="Popup"> <h1>This is the hall for the town</h1> </div>]} /></p>
             <p className='buttons'><Hover Holder={[<MultiButton />]} Content={[<div className="Popup"> <h1>To just roll a number with no bonuses</h1> </div>]} /></p>
+            <Draggable className="App">
+                <Paper variant="outlined" elevation={3} className='paper'>
+                    <RandButton Number={10} Bonus={1} Words={'Wack it'} />
+                    <RandButton Number={10} Bonus={1} Words={'Smack it'} />
+                    <RandButton Number={10} Bonus={1} Words={'Spell attack it'} />
+                </Paper>
+            </Draggable>
         </div>
     );
 }

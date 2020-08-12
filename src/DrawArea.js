@@ -29,7 +29,7 @@ function DrawArea() {
         marginTop: '130px',
         background: 'red',
         position: 'absolute',
-        opacity: '0.5'
+        opacity: '0.5',
     }
     ])
 
@@ -136,6 +136,9 @@ function DrawArea() {
     }
     return (
         <div>
+            {mystyle.map((Boxes, index) => (
+                <Hover Holder={<h1 style={Boxes}></h1>} Content={[<div className="Popup"> <h1>{desc[index]}</h1></div>]} />
+            ))}
             <Button variant="outlined" onClick={() => Start()}> Start Draw </Button>
             {ShowArea &&
                 <div
@@ -157,12 +160,6 @@ function DrawArea() {
 
                 </div>
             }
-            {mystyle.map((Boxes, index) => (
-                <Hover Holder={<h1 style={Boxes}></h1>} Content={[<div className="Popup"> <h1>{desc[index]}</h1></div>]} />
-            ))}
-
-            
-            
         </div>
     );
 }

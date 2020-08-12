@@ -109,3 +109,10 @@
     text-align: center;
     display: inline-block;
 }
+
+.paper {
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
